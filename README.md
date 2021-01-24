@@ -45,9 +45,21 @@ strongest “object” is the winner of the game.
   at the end.
 
 ### Algorithm
+- Create a global variable called `choice`.
+
+
 > Player Computer
 - Define function call `computerPlay()`
-- Create `variable` with the name`choice`.
-- The choice variable takes an `array` of rock, paper, scissors.
-- Store `random` choice in a new variable with the name *randomChoice*
-- Return this choice with first letter capitalized.  
+- Create `variable` with the name`randomChoice`.
+- Make a copy of the global variable with the function variable.
+- Return `random` choice.
+
+
+> Rounds
+- Define function call `playRounds()`.
+- Function takes 2 argument: `playerSelection`, `computerSelection`
+- Player wins if selection is "rock" and computer selection is "scissors".
+- Player looses if selection is "scissors" and computer selection is "rock".
+- 3 & 4 is repeated until the rounds end.
+- Print message based on the outcome: Example
+  - "You Lose! Scissors beat Paper", etc...
