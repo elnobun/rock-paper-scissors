@@ -1,29 +1,42 @@
-// Create variable with an array of rock, paper, scissors
-const choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 // Create function call `computerPlay()`
 function computerPlay() {
-  // Store random choice in a new variable
-  const randomChoice = [...choices];
-  return randomChoice[Math.floor(Math.random() * randomChoice.length)];
+  // Create variable with an array of rock, paper, scissors
+  let choices = ["rock", "paper", "scissors"];
+  return choices[Math.trunc(Math.random() * choices.length)];
 }
 
 // Create function call `playRounds()`
 function playRounds(playerSelection, computerSelection) {
-  const playerChoice = playerSelection.toLowerCase();
-  const computerChoice = computerSelection.toLowerCase();
+  const player = playerSelection.toLowerCase();
+  const computer = computerSelection.toLowerCase();
 
-  if (playerChoice === "rock" && computerChoice === "scissors") {
-    return `You Win! Rock beats Scissors`;
-  } else if (playerChoice === "rock" && computerChoice === "paper") {
-    return `You Lose! Paper beats Rock`;
-  } else if (playerChoice === "scissors" && computerChoice === "paper") {
-    return `You Win! Scissors beats Paper`;
-  } else if (playerChoice === "scissors" && computerChoice === "rock") {
-    return `You Lose! Rock beats Scissors`;
+  // Check for a tie
+  if (player === computer) {
+    return `It is a tie`;
+  }
+
+  // Check all use cases.
+  if (
+    (player === "rock" && computer === "scissors") ||
+    (player === "scissors" && computer === "paper") ||
+    (player === "paper" && computer === "rock")
+  ) {
+    return `You Win! ${capitalize(player)} beats ${capitalize(computer)}`;
   } else {
-    return "It is a draw";
+    return `You lose! ${capitalize(computer)} beats ${capitalize(player)}`;
   }
 }
 
-console.log(playRounds("rock", computerPlay()));
+// Create function call `game()`
+function game() {
+  // Keep track of player and computer score
+  return playRounds("rock", computerPlay());
+}
+console.log(game());
