@@ -63,3 +63,11 @@ strongest “object” is the winner of the game.
 - 3 & 4 is repeated until the rounds end.
 - Print message based on the outcome: Example
   - "You Lose! Scissors beat Paper", etc...
+
+> Game
+- set variable for round with value of 5
+- Set default player and computer score to 0  
+- Get prompt from user
+- Make a loop to play game for 5 rounds.
+- If a player wins, increase player score by 1
+- If a player score is equal to the number of rounds, that player wins.
